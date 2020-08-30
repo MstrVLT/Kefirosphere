@@ -12,7 +12,7 @@ AMS		:= $(TOPDIR)/../../
 
 include $(DEVKITARM)/base_rules
 
-AMSBRANCH := $(shell git symbolic-ref --short HEAD)
+AMSBRANCH := $(subst /,_,$(shell git symbolic-ref --short HEAD))
 AMSHASH := $(shell git rev-parse --short HEAD)
 AMSREV := $(AMSBRANCH)-$(AMSHASH)
 
